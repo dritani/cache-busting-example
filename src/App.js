@@ -11,8 +11,9 @@ const App = () => {
       {({ loading, isLatestVersion, refreshCacheAndReload }) => {
         if (loading) return null;
         if (!loading && !isLatestVersion) {
-          notify()
+          // notify()
           alert('wtf')
+          toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.');
           // refreshCacheAndReload();
         }
 
