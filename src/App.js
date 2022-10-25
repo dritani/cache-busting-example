@@ -1,9 +1,9 @@
 import React from 'react';
 import CacheBuster from './CacheBuster';
 import './App.css';
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster, resolveValue } from 'react-hot-toast';
 
-const notify = () => toast('Here is your toast.');
+const notify = () => toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.');
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       {({ loading, isLatestVersion, refreshCacheAndReload }) => {
         if (loading) return null;
         if (!loading && !isLatestVersion) {
-          alert('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.')
+          notify()
           // refreshCacheAndReload();
         }
 
@@ -24,7 +24,16 @@ const App = () => {
               </p>
               <div>
                 <button onClick={notify}>Make me a toast</button>
-                <Toaster />
+                <Toaster>
+                  {(t) => (
+                    <div
+                      style={{ opacity: t.visible ? 1 : 0, background: 'white', padding: 8 }}
+                    >
+                      {resolveValue(t.message, t)}
+                      <button onClick={refreshCacheAndReload}>Refresh</button>
+                    </div>
+                  )}
+                </Toaster>
               </div>
             </header>
           </div>
