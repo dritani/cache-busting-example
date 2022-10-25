@@ -26,8 +26,7 @@ const App = () => {
                 Version - <code>v{global.appVersion}</code>
               </h1>
               <div
-                <button onClick={notify}>Make me a toast</button>
-                <Toaster >
+                <Toaster>
                   {(t) => (
                     <div
                       style={{ opacity: t.visible ? 1 : 0, background: 'green', padding: 8 }}
