@@ -3,7 +3,7 @@ import CacheBuster from './CacheBuster';
 import './App.css';
 import toast, { Toaster, resolveValue } from 'react-hot-toast';
 
-const notify = () => toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.', duration: 40000, position: 'bottom-right');
+const notify = () => toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.', { duration: 40000, position: 'bottom-right' });
 
 const App = () => {
   return (
