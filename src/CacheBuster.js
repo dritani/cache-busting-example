@@ -46,6 +46,7 @@ class CacheBuster extends React.Component {
       .then((meta) => {
         const latestVersion = meta.version;
         const currentVersion = global.appVersion;
+        alert(`latestVersion: ${latestVersion}. currentVersion: ${currentVersion}`)
 
         const shouldForceRefresh = semverGreaterThan(latestVersion, currentVersion);
         if (shouldForceRefresh) {
