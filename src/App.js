@@ -25,18 +25,16 @@ const App = () => {
               <h1>
                 Version - <code>v{global.appVersion}</code>
               </h1>
-              <div
-                <Toaster>
-                  {(t) => (
-                    <div
-                      style={{ opacity: t.visible ? 1 : 0, background: 'green', padding: 8 }}
-                    >
-                      {resolveValue(t.message, t)}
-                      <button onClick={refreshCacheAndReload}>Refresh</button>
-                    </div>
-                  )}
-                </Toaster>
-              </div>
+              <Toaster>
+                {(t) => (
+                  <div
+                    style={{ opacity: t.visible ? 1 : 0, background: 'white', padding: 8 }}
+                  >
+                    {resolveValue(t.message, t)}
+                    <button onClick={refreshCacheAndReload}>Refresh</button>
+                  </div>
+                )}
+              </Toaster>
             </header>
           </div>
         );
