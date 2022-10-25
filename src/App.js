@@ -9,7 +9,8 @@ class App extends Component {
         {({ loading, isLatestVersion, refreshCacheAndReload }) => {
           if (loading) return null;
           if (!loading && !isLatestVersion) {
-            refreshCacheAndReload();
+            alert('new version! must refresh')
+            // refreshCacheAndReload();
           }
 
           return (
