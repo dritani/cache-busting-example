@@ -12,6 +12,7 @@ const App = () => {
         if (loading) return null;
         if (!loading && !isLatestVersion) {
           notify()
+          alert('wtf')
           // refreshCacheAndReload();
         }
 
