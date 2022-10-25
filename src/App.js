@@ -24,6 +24,14 @@ const App = () => {
               <p>
                 Bundle version - <code>v{global.appVersion}</code>
               </p>
+            </header>
+          </div>
+        );
+      }}
+    </CacheBuster>
+  );
+};
+
               // <div>
               //   <button onClick={notify}>Make me a toast</button>
               //   <Toaster>
@@ -37,12 +45,5 @@ const App = () => {
               //     )}
               //   </Toaster>
               // </div>
-            </header>
-          </div>
-        );
-      }}
-    </CacheBuster>
-  );
-};
 
 export default App;
