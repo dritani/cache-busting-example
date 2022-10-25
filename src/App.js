@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CacheBuster from './CacheBuster';
 import './App.css';
 import toast, { Toaster } from 'react-hot-toast';
