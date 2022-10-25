@@ -1,9 +1,9 @@
 import React from 'react';
 import CacheBuster from './CacheBuster';
 import './App.css';
-import toast, { Toaster, resolveValue } from 'react-hot-toast';
+// import toast, { Toaster, resolveValue } from 'react-hot-toast';
 
-const notify = () => toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.');
+// const notify = () => toast('Une nouvelle version de Viavoo est publié. Veuillez actualiser la page.');
 
 const App = () => {
   return (
