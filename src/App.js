@@ -20,7 +20,7 @@ const App = () => {
         return (
           <div className="App">
             <header className="App-header">
-              <p>Exemple - Actualisation du Cache</h1>
+              <p>Exemple - Actualisation du Cache</p>
               <h1>
                 Version - <code>v{global.appVersion}</code>
               </h1>
