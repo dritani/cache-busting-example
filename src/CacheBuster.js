@@ -26,12 +26,10 @@ class CacheBuster extends React.Component {
       try {
         if (window.caches) {
           const { caches } = window;
-          console.log('caches')
-          console.log(caches)
           const cacheNames = await caches.keys();
-          // for (const cacheName of cacheNames) {
-          //   caches.delete(cacheName);
-          // }
+          for (const cacheName of cacheNames) {
+            caches.delete(cacheName);
+          }
           console.log('The cache has been deleted.');
           window.location.reload(true); // this DOES delete the cache, but crashes Cloudflare
           // window.location.href = window.location.href // this does nothing
