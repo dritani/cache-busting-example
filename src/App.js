@@ -17,7 +17,7 @@ const App = () => {
           // refreshCacheAndReload();
         }
 
-        notify()
+        // notify()
 
         return (
           <div className="App">
