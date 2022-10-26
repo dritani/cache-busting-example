@@ -22,29 +22,50 @@ const semverGreaterThan = (versionA, versionB) => {
 class CacheBuster extends React.Component {
   constructor(props) {
     super(props);
+     const refreshCacheAndReload = async () => {
+      try {
+        if (window?.caches) {
+          const { caches } = window;
+          console.log('caches')
+          console.log(caches)
+          const cacheNames = await caches.keys();
+          for (const cacheName of cacheNames) {
+            caches.delete(cacheName);
+          }
+          log('The cache has been deleted.');
+          window.location.reload(true);
+        }
+      } catch (error) {
+        log('An error occurred while deleting the cache.', true);
+        log(error, true);
+      }
+  };
+
+
     this.state = {
       loading: true,
       isLatestVersion: false,
-      refreshCacheAndReload: () => {
-        console.log('Clearing cache and hard reloading...')
-        if (caches) {
-          console.log('caches')
-          console.log(caches)
-          // Service worker cache should be cleared with caches.delete()
-          caches.keys().then(function(names) {
-            console.log('names')
-            console.log(names)
-            // for (let name of names) caches.delete(name);
-          });
-          console.log('cancelled deletion code')
-        }
-
-        // delete browser cache and hard reload
-        // try without this line
-        // window.location.reload(true);
-      }
+      refreshCacheAndReload: refreshCacheAndReload,
     };
   }
+
+  // refreshCacheAndReload: () => {
+  //       console.log('Clearing cache and hard reloading...')
+  //       if (caches) {
+  //         console.log('caches')
+  //         console.log(caches)
+  //         // Service worker cache should be cleared with caches.delete()
+  //         caches.keys().then(function(names) {
+  //           console.log('names')
+  //           console.log(names)
+  //           // for (let name of names) caches.delete(name);
+  //         });
+  //         console.log('cancelled deletion code')
+  //       }
+  //       // delete browser cache and hard reload
+  //       // try without this line
+  //       // window.location.reload(true);
+  //     },
 
   componentDidMount() {
     fetch('/meta.json')
