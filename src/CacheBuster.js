@@ -34,8 +34,9 @@ class CacheBuster extends React.Component {
           caches.keys().then(function(names) {
             console.log('names')
             console.log(names)
-            for (let name of names) caches.delete(name);
+            // for (let name of names) caches.delete(name);
           });
+          console.log('cancelled deletion code')
         }
 
         // delete browser cache and hard reload
