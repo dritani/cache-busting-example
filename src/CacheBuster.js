@@ -32,12 +32,12 @@ class CacheBuster extends React.Component {
           for (const cacheName of cacheNames) {
             caches.delete(cacheName);
           }
-          log('The cache has been deleted.');
+          console.log('The cache has been deleted.');
           window.location.reload(true);
         }
       } catch (error) {
-        log('An error occurred while deleting the cache.', true);
-        log(error, true);
+        console.log('An error occurred while deleting the cache.', true);
+        console.log(error, true);
       }
   };
 
