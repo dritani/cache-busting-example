@@ -29,11 +29,12 @@ class CacheBuster extends React.Component {
           console.log('caches')
           console.log(caches)
           const cacheNames = await caches.keys();
-          for (const cacheName of cacheNames) {
-            caches.delete(cacheName);
-          }
+          // for (const cacheName of cacheNames) {
+          //   caches.delete(cacheName);
+          // }
           console.log('The cache has been deleted.');
           window.location.reload(true);
+          // window.location.href = window.location.href
         }
       } catch (error) {
         console.log('An error occurred while deleting the cache.', true);
@@ -41,7 +42,12 @@ class CacheBuster extends React.Component {
       }
   };
   // deleting only 3 old caches (HTML, CSS, JS) works.
-  // deleting all older ones works as well. did i have to click refresh?
+  // deleting all older ones works as well. did i have to click refresh? NOPE! automatic
+  // also webpack config if no button needed
+  // https://webpack.js.org/guides/caching/
+  
+  // TODO: how to get age of cache?
+  // TODO: is there a refresh method?
 
 
     this.state = {
