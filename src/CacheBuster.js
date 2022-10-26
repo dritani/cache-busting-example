@@ -24,7 +24,7 @@ class CacheBuster extends React.Component {
     super(props);
      const refreshCacheAndReload = async () => {
       try {
-        if (window?.caches) {
+        if (window.caches) {
           const { caches } = window;
           console.log('caches')
           console.log(caches)
