@@ -28,14 +28,19 @@ class CacheBuster extends React.Component {
       refreshCacheAndReload: () => {
         console.log('Clearing cache and hard reloading...')
         if (caches) {
+          console.log('caches')
+          console.log(caches)
           // Service worker cache should be cleared with caches.delete()
           caches.keys().then(function(names) {
+            console.log('names')
+            console.log(names)
             for (let name of names) caches.delete(name);
           });
         }
 
         // delete browser cache and hard reload
-        window.location.reload(true);
+        // try without this line
+        // window.location.reload(true);
       }
     };
   }
