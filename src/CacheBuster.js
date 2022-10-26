@@ -41,6 +41,7 @@ class CacheBuster extends React.Component {
       }
   };
   // deleting only 3 old caches (HTML, CSS, JS) works.
+  // deleting all older ones works as well. did i have to click refresh?
 
 
     this.state = {
