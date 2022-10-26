@@ -17,6 +17,8 @@ const App = () => {
           // refreshCacheAndReload();
         }
 
+        notify()
+
         return (
           <div className="App">
             <header className="App-header">
